@@ -76,6 +76,9 @@ spec:
               yq eval '.image.tag = env(GIT_COMMIT)' -i values.yaml
               cat values.yaml
               pwd
+              git add values.yaml
+              git commit -m 'Triggered Build'
+              git push https://hrabhi44:HemanthCloud1@github.com/hrabhi44/rsvpapp-helm-cicd.git
             '''
             sh "git config user.name hrabhi44"
             sh "git add rsvpapp-helm-cicd/values.yaml"
