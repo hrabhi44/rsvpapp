@@ -80,10 +80,6 @@ spec:
               git commit -m 'Triggered Build'
               git push https://$GIT_CREDS_USR:$GIT_CREDS_PSW@github.com/$GIT_CREDS_USR/rsvpapp-helm-cicd.git
             '''
-            sh "git config user.name hrabhi44"
-            sh "git add rsvpapp-helm-cicd/values.yaml"
-            sh "git commit -m 'Triggered Build'"
-            sh "git push https://hrabhi44:HemanthCloud1@github.com/hrabhi44/rsvpapp-helm-cicd.git"
           }
         }
       }
