@@ -77,7 +77,7 @@ spec:
             '''
             sh "git add rsvpapp-helm-cicd/values.yaml"
             sh "git commit -m 'Triggered Build'"
-            sh "git push "
+            sh "git push --set-upstream origin master "
             
         }
       }
