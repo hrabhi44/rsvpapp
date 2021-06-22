@@ -78,7 +78,7 @@ spec:
               pwd
               git add values.yaml
               git commit -m 'Triggered Build'
-              git push https://hrabhi44:HemanthCloud1@github.com/hrabhi44/rsvpapp-helm-cicd.git
+              git push https://$GIT_CREDS_USR:HemanthCloud1@github.com/$GIT_CREDS_USR/rsvpapp-helm-cicd.git
             '''
             sh "git config user.name hrabhi44"
             sh "git add rsvpapp-helm-cicd/values.yaml"
