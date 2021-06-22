@@ -77,7 +77,7 @@ spec:
             '''
             sh "git add /package/values.yaml"
             sh "git commit -m 'Triggered Build'"
-            sh "git push https://hemanth344:HemanthCloud1@github.com/hemanth344/rsvpapp-helm-cicd.git"
+            sh "git push https://hrabhi44:Abhi@1344#@github.com/hrabhi44/rsvpapp-helm-cicd.git"
             
         }
       }
