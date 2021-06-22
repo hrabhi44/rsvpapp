@@ -53,11 +53,12 @@ spec:
         GIT_REPO_URL = "github.com/hrabhi44/rsvpapp-helm-cicd.git"
         GIT_REPO_EMAIL = 'hrworldtodiscover@gmail.com'
         GIT_REPO_BRANCH = "master"
+          
        // Update above variables with your user details
       }
       steps {
         container('tools') {
-            sh "git clone https://$GIT_CREDS_USR:$GIT_CREDS_PSW@${env.GIT_REPO_URL}"
+            sh "git clone https://github.com/hrabhi44/rsvpapp-helm-cicd.git"
             sh "git config --global user.email ${env.GIT_REPO_EMAIL}"
              // install wq
             sh "wget https://github.com/mikefarah/yq/releases/download/v4.9.6/yq_linux_amd64.tar.gz"
