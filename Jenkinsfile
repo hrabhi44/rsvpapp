@@ -50,13 +50,14 @@ spec:
     stage('Deploy to staging') {
       environment {
         GIT_CREDS = credentials('github')
-        GIT_REPO_URL = "github.com/hemanth344/rsvpapp-helm-cicd.git"
-        GIT_REPO_EMAIL = 'hemanth@cloudyuga.guru'
+        GIT_REPO_URL = "github.com/hrabhi44/rsvpapp-helm-cicd.git"
+        GIT_REPO_EMAIL = 'hrworldtodiscover@gmail.com'
         GIT_REPO_BRANCH = "master"
        // Update above variables with your user details
       }
       steps {
         container('tools') {
+            sh "git clone https://$GIT_CREDS_USR:$GIT_CREDS_PSW@${env.GIT_REPO_URL}"
             sh "git config --global user.email ${env.GIT_REPO_EMAIL}"
              // install wq
             sh "wget https://github.com/mikefarah/yq/releases/download/v4.9.6/yq_linux_amd64.tar.gz"
@@ -71,14 +72,13 @@ spec:
               yq eval '.image.tag = env(GIT_COMMIT)' -i rsvpapp-helm-cicd/package/values.yaml
               cat rsvpapp-helm-cicd/package/values.yaml
               pwd
-              git add .
-              git commit -m 'Triggered Build'
-              sh "git push https://hemanth344:HemanthCloud1@github.com/hemanth344/rsvpapp-helm-cicd.git"
+              //git add .
+             // git commit -m 'Triggered Build'
+              //sh "git push https://hemanth344:HemanthCloud1@github.com/hemanth344/rsvpapp-helm-cicd.git"
             '''
-            //sh "git add /package/values.yaml"
-            //sh "git commit -m 'Triggered Build'"
-            //work fine
-            //sh "git push https://hemanth344:HemanthCloud1@github.com/hemanth344/rsvpapp-helm-cicd.git"
+            sh "git add /package/values.yaml"
+            sh "git commit -m 'Triggered Build'"
+            sh "git push https://hemanth344:HemanthCloud1@github.com/hemanth344/rsvpapp-helm-cicd.git"
             
         }
       }
