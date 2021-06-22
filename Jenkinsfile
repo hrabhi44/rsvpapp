@@ -74,7 +74,7 @@ spec:
               ls -lth
               yq eval '.image.repository = env(IMAGE_REPO)' -i values.yaml
               yq eval '.image.tag = env(GIT_COMMIT)' -i values.yaml
-              cat rsvpapp-helm-cicd/values.yaml
+              cat values.yaml
               pwd
             '''
             sh "git config user.name hrabhi44"
