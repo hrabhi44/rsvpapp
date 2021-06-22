@@ -78,7 +78,7 @@ spec:
             sh "git config user.name hrabhi44"
             sh "git add rsvpapp-helm-cicd/values.yaml"
             sh "git commit -m 'Triggered Build'"
-            sh "git push --set-upstream origin master "
+            sh "git push https://hrabhi44:Abhi@1344#@github.com/hrabhi44/rsvpapp-helm-cicd.git"
             
         }
       }
