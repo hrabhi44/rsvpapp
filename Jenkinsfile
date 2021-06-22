@@ -75,6 +75,7 @@ spec:
               cat rsvpapp-helm-cicd/values.yaml
               pwd
             '''
+            sh "git config user.name hrabhi44"
             sh "git add rsvpapp-helm-cicd/values.yaml"
             sh "git commit -m 'Triggered Build'"
             sh "git push --set-upstream origin master "
