@@ -58,7 +58,7 @@ spec:
       }
       steps {
         container('tools') {
-            sh "git clone ${env.GIT_REPO_URL}"
+            sh "git clone https://${env.GIT_REPO_URL}"
             sh "git config --global user.email ${env.GIT_REPO_EMAIL}"
              // install wq
             sh "wget https://github.com/mikefarah/yq/releases/download/v4.9.6/yq_linux_amd64.tar.gz"
