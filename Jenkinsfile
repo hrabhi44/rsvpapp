@@ -72,7 +72,7 @@ spec:
               echo $GIT_REPO_EMAIL
               echo $GIT_COMMIT
               ls -lth
-              yq eval '.image.repository = docker.io/env(IMAGE_REPO)' -i values.yaml
+              yq eval '.image.repository = env(IMAGE_REPO)' -i values.yaml
               yq eval '.image.tag = env(GIT_COMMIT)' -i values.yaml
               cat values.yaml
               pwd
